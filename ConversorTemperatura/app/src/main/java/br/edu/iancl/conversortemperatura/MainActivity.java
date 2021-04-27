@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText mEntradaEdit;
     private Button mParaCelsiusButton;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         switch (view.getId()) {
             case R.id.button_para_celcius:
-                calculo = (entrada - 32) /1.8f;
+                calculo = (entrada - 32) / 1.8f;
                 mSaidaText.setText(String.format("%.2f ºC", calculo));
                 break;
 
