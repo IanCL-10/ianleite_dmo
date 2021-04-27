@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private EditText mEntradaEdit;
     private Button mParaCelsiusButton;
+    private Button mParaFahrenheitButton;
     private TextView mSaidaText;
 
     @Override
@@ -21,22 +22,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         mEntradaEdit = findViewById(R.id.edit_entrada);
         mParaCelsiusButton = findViewById(R.id.button_para_celcius);
+        mParaFahrenheitButton = findViewById(R.id.button_para_fahrenheit);
         mSaidaText = findViewById(R.id.text_saida);
 
         mParaCelsiusButton.setOnClickListener(this);
+        mParaFahrenheitButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        if(view == mParaCelsiusButton){
-            float entrada, calculo;
-            try {
-                entrada = Float.valueOf(mEntradaEdit.getText().toString());
-            } catch (NumberFormatException e) {
-                entrada = 0;
-            }
-            calculo = (entrada - 32) /1.8f;
-            mSaidaText.setText(String.format("%.2f ºC", calculo));
+        float entrada, calculo;
+        try {
+            entrada = Float.valueOf(mEntradaEdit.getText().toString());
+        } catch (NumberFormatException e) {
+            entrada = 0;
+        }
+        switch (view.getId()) {
+            case R.id.button_para_celcius:
+                calculo = (entrada - 32) /1.8f;
+                mSaidaText.setText(String.format("%.2f ºC", calculo));
+                break;
+
+            case R.id.button_para_fahrenheit:
+                calculo = 1.8f * entrada + 32;
+                mSaidaText.setText(String.format("%.2f ºF", calculo));
+                break;
         }
     }
 }
