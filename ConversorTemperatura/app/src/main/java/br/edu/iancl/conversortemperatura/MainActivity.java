@@ -50,3 +50,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 }
+
+/*
+Projeto bem organizado! Parabéns.
+Nota 10.
+ */
