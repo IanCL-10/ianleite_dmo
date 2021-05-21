@@ -17,7 +17,7 @@ public class MediaController {
     }
 
     public static Double mediaArimetica(List<Double> valores){
-        MediaAritmetica aritmetica = null;
+        MediaAritmetica aritmetica;
         //TODO implementar o restante do método
         double v1 = valores.get(0);
         double v2 = valores.get(1);
@@ -28,9 +28,10 @@ public class MediaController {
         return media(aritmetica);
     }
 
-    public static Double mediaHarmonica(/*Indicar argumentos, se necessário*/){
-        MediaHarmonica harmonica = null;
+    public static Double mediaHarmonica(List<Double> values){
+        MediaHarmonica harmonica;
         //TODO implementar o restante do método
+        harmonica = new MediaHarmonica(values);
         return media(harmonica);
     }
 

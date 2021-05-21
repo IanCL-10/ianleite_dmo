@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">Medias_DMO</string>
     <string name="hint_valor">valor...</string>
-    <string name="button_media">Calcular Média</string>
+    <string name="button_mediaAritimetica">Média Aritimetica</string>
+    <string name="button_mediaPonderada">Média Ponderada</string>
+    <string name="button_mediaHarmonica">Média Harmônica</string>
 </resources>

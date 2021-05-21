@@ -22,7 +22,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText mValor3EditText;
     private EditText mValor4EditText;
     private EditText mValor5EditText;
-    private Button mCalcularMediaButton;
+    private Button mMediaAritimeticaButton;
+    private Button mMediaHarmonicaButton;
     private List<EditText> editTextList;
 
     @Override
@@ -36,10 +37,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mValor3EditText = findViewById(R.id.edit_valor3);
         mValor4EditText = findViewById(R.id.edit_valor4);
         mValor5EditText = findViewById(R.id.edit_valor5);
-        mCalcularMediaButton = findViewById(R.id.button_media);
+        mMediaAritimeticaButton = findViewById(R.id.button_aritimetica);
+        mMediaHarmonicaButton = findViewById(R.id.button_harmonica);
 
         //Listener
-        mCalcularMediaButton.setOnClickListener(this);
+        mMediaAritimeticaButton.setOnClickListener(this);
+        mMediaHarmonicaButton.setOnClickListener(this);
 
         //Lista
         editTextList = new ArrayList<>();
@@ -53,43 +56,65 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
-        if(view == mCalcularMediaButton){
-            calcular();
+        switch (view.getId()){
+            case R.id.button_aritimetica:
+                calcularMediaAritimetica();
+                break;
+            case R.id.button_harmonica:
+                calcularMediaHarmonica();
+                break;
         }
     }
 
-    private void calcular(){
-        boolean campoVazio = false;
+    private boolean checarCampos(){
         for(EditText edit : editTextList){
             if(TextUtils.isEmpty(edit.getText())){
-                campoVazio = true;
+                return true;
             }
         }
+        return false;
+    }
 
-        if(campoVazio){
+    private List<Double> retornaValores(){
+        double v1 = 0, v2 = 0, v3 = 0, v4 = 0, v5 = 0;
+        List<Double> valores = new ArrayList<>();
+        try {
+            v1 = Double.parseDouble(mValor1EditText.getText().toString());
+            v2 = Double.parseDouble(mValor2EditText.getText().toString());
+            v3 = Double.parseDouble(mValor3EditText.getText().toString());
+            v4 = Double.parseDouble(mValor4EditText.getText().toString());
+            v5 = Double.parseDouble(mValor5EditText.getText().toString());
+            valores.add(v1);
+            valores.add(v2);
+            valores.add(v3);
+            valores.add(v4);
+            valores.add(v5);
+        }catch (NumberFormatException ex) {
+            Toast.makeText(this, "Valor não suportado", Toast.LENGTH_SHORT).show();
+        }
+        return valores;
+    }
+
+    private void calcularMediaAritimetica(){
+        if(checarCampos()){
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
         else {
-            double v1 = 0, v2 = 0, v3 = 0, v4 = 0, v5 = 0;
-            List<Double> valores = new ArrayList<>();
-            try {
-                v1 = Double.parseDouble(mValor1EditText.getText().toString());
-                v2 = Double.parseDouble(mValor2EditText.getText().toString());
-                v3 = Double.parseDouble(mValor3EditText.getText().toString());
-                v4 = Double.parseDouble(mValor4EditText.getText().toString());
-                v5 = Double.parseDouble(mValor5EditText.getText().toString());
-
-                valores.add(v1);
-                valores.add(v2);
-                valores.add(v3);
-                valores.add(v4);
-                valores.add(v5);
-                double mediaAritimetica = MediaController.mediaArimetica(valores);
-                Toast.makeText(this, String.format("Media: %.2f", mediaAritimetica), Toast.LENGTH_LONG).show();
-
-            }catch (NumberFormatException ex) {
-                Toast.makeText(this, "Valor não suportado", Toast.LENGTH_SHORT).show();
-            }
+            List<Double> valores = retornaValores();
+            double mediaAritimetica = MediaController.mediaArimetica(valores);
+            Toast.makeText(this, String.format("Media Aritimética: %.2f", mediaAritimetica), Toast.LENGTH_LONG).show();
         }
     }
+
+    private void calcularMediaHarmonica(){
+        if(checarCampos()){
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            List<Double> valores = retornaValores();
+            double mediaHarmonica = MediaController.mediaHarmonica(valores);
+            Toast.makeText(this, String.format("Media Harmônica: %.2f", mediaHarmonica), Toast.LENGTH_LONG).show();
+        }
+    }
+
 }

@@ -73,15 +73,26 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_valor4" />
 
     <Button
-        android:id="@+id/button_media"
+        android:id="@+id/button_aritimetica"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
-        android:text="@string/button_media"
-        android:textSize="24sp"
+        android:layout_marginRight="4dp"
+        android:text="@string/button_mediaAritimetica"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/button_harmonica" />
+
+    <Button
+        android:id="@+id/button_harmonica"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="4dp"
+        android:text="@string/button_mediaHarmonica"
+        app:layout_constraintLeft_toRightOf="@+id/button_aritimetica"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
