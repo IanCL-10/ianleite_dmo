@@ -10,15 +10,17 @@ import br.edu.iancl.medias_dmo.model.MediaStrategy;
 
 public class MediaController {
 
-    public static Double mediaPonderada(/*Indicar argumentos, se necessário*/){
-        MediaPonderada ponderada = null;
-        //TODO implementar o restante do método
+    public static Double mediaPonderada(List<Double> valores, List<Integer> pesos){
+        MediaPonderada ponderada;
+        ponderada = new MediaPonderada(
+                valores.get(0), valores.get(1), valores.get(2), valores.get(3), valores.get(4),
+                pesos.get(0), pesos.get(1), pesos.get(2), pesos.get(3), pesos.get(4)
+        );
         return media(ponderada);
     }
 
     public static Double mediaArimetica(List<Double> valores){
         MediaAritmetica aritmetica;
-        //TODO implementar o restante do método
         double v1 = valores.get(0);
         double v2 = valores.get(1);
         double v3 = valores.get(2);
@@ -30,7 +32,6 @@ public class MediaController {
 
     public static Double mediaHarmonica(List<Double> values){
         MediaHarmonica harmonica;
-        //TODO implementar o restante do método
         harmonica = new MediaHarmonica(values);
         return media(harmonica);
     }

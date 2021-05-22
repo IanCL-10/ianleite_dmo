@@ -2,6 +2,7 @@ package br.edu.iancl.medias_dmo.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private EditText mValor5EditText;
     private Button mMediaAritimeticaButton;
     private Button mMediaHarmonicaButton;
+    private Button mMediaPonderadaButton;
     private List<EditText> editTextList;
 
     @Override
@@ -39,10 +41,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mValor5EditText = findViewById(R.id.edit_valor5);
         mMediaAritimeticaButton = findViewById(R.id.button_aritimetica);
         mMediaHarmonicaButton = findViewById(R.id.button_harmonica);
+        mMediaPonderadaButton = findViewById(R.id.button_ponderada);
 
         //Listener
         mMediaAritimeticaButton.setOnClickListener(this);
         mMediaHarmonicaButton.setOnClickListener(this);
+        mMediaPonderadaButton.setOnClickListener(this);
 
         //Lista
         editTextList = new ArrayList<>();
@@ -62,6 +66,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.button_harmonica:
                 calcularMediaHarmonica();
+                break;
+            case R.id.button_ponderada:
+                calcularMediaPonderada();
                 break;
         }
     }
@@ -95,14 +102,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return valores;
     }
 
+    private Bundle retornaBundle(){
+        List<Double> valores = retornaValores();
+        Bundle valoresBundle = new Bundle();
+        valoresBundle.putDouble("v1", valores.get(0));
+        valoresBundle.putDouble("v2", valores.get(1));
+        valoresBundle.putDouble("v3", valores.get(2));
+        valoresBundle.putDouble("v4", valores.get(3));
+        valoresBundle.putDouble("v5", valores.get(4));
+        return  valoresBundle;
+    }
+
     private void calcularMediaAritimetica(){
         if(checarCampos()){
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
         else {
-            List<Double> valores = retornaValores();
-            double mediaAritimetica = MediaController.mediaArimetica(valores);
-            Toast.makeText(this, String.format("Media Aritimética: %.2f", mediaAritimetica), Toast.LENGTH_LONG).show();
+            Bundle valoresBundle = retornaBundle();
+            Intent intent = new Intent(this, MediaAritimeticaActivity.class);
+            intent.putExtras(valoresBundle);
+            startActivity(intent);
         }
     }
 
@@ -111,9 +130,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
         }
         else {
-            List<Double> valores = retornaValores();
-            double mediaHarmonica = MediaController.mediaHarmonica(valores);
-            Toast.makeText(this, String.format("Media Harmônica: %.2f", mediaHarmonica), Toast.LENGTH_LONG).show();
+            Bundle valoresBundle = retornaBundle();
+            Intent intent = new Intent(this, MediaHarmonicaActivity.class);
+            intent.putExtras(valoresBundle);
+            startActivity(intent);
+        }
+    }
+
+    private void calcularMediaPonderada(){
+        if(checarCampos()){
+            Toast.makeText(this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
+        }
+        else {
+            Bundle valoresBundle = retornaBundle();
+            Intent intent = new Intent(this, MediaPonderadaActivity.class);
+            intent.putExtras(valoresBundle);
+            startActivity(intent);
         }
     }
 

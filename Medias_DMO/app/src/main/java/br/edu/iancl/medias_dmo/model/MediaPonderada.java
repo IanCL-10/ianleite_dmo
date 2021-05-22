@@ -1,5 +1,8 @@
 package br.edu.iancl.medias_dmo.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MediaPonderada implements MediaStrategy{
 
     private Double value1;
@@ -28,7 +31,30 @@ public class MediaPonderada implements MediaStrategy{
 
     @Override
     public Double calcularMedia() {
-        //TODO implementar método
-        return null;
+        Double sumValue = 0D;
+
+        List<Double> valores = new ArrayList<>();
+        valores.add(value1);
+        valores.add(value2);
+        valores.add(value3);
+        valores.add(value4);
+        valores.add(value5);
+
+        List<Integer> pesos = new ArrayList<>();
+        pesos.add(weight_value1);
+        pesos.add(weight_value2);
+        pesos.add(weight_value3);
+        pesos.add(weight_value4);
+        pesos.add(weight_value5);
+
+        Integer sumWeight = 0;
+
+        for(Integer peso: pesos){
+            sumWeight += peso;
+        }
+        for(int i = 0; i < valores.size(); i++){
+            sumValue += (valores.get(i) * pesos.get(i));
+        }
+        return sumValue/sumWeight;
     }
 }

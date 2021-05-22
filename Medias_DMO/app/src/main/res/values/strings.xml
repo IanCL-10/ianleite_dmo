@@ -1,7 +1,12 @@
 <resources>
     <string name="app_name">Medias_DMO</string>
     <string name="hint_valor">valor...</string>
-    <string name="button_mediaAritimetica">Média Aritimetica</string>
-    <string name="button_mediaPonderada">Média Ponderada</string>
-    <string name="button_mediaHarmonica">Média Harmônica</string>
+    <string name="button_mediaAritimetica">Aritimética</string>
+    <string name="button_mediaPonderada">Ponderada</string>
+    <string name="button_mediaHarmonica">Harmônica</string>
+    <string name="text_media_aritimetica">Média Aritimética:</string>
+    <string name="text_media_harmonica">Média Harmônica:</string>
+    <string name="text_media_ponderada">Média Ponderada:</string>
+    <string name="hint_peso">peso...</string>
+    <string name="button_calcular_media_ponderada">Calcular Média Ponderada</string>
 </resources>
