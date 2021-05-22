@@ -11,7 +11,7 @@ public class UsuarioDAO {
 
     public UsuarioDAO(){
         usuarioList = new ArrayList<>(10);
-        usuarioList.add(new Usuario( "ednilsonrossi@ifsp.edu.br",12345));
+        usuarioList.add(new Usuario( "edinilsonrossi@ifsp.edu.br",12345));
         usuarioList.add(new Usuario( "pernalonga@ifsp.edu.br",12345));
         usuarioList.add(new Usuario( "dick_vigarista@ifsp.edu.br",12345));
         usuarioList.add(new Usuario( "bob_esponja@ifsp.edu.br",12345));
