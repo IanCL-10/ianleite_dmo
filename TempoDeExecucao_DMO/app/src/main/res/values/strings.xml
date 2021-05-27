@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TempoDeExecucao_DMO</string>
+    <string name="button_execucao">Tempo em execução:</string>
+    <string name="view_parado">Tempo parado(stopped):</string>
+    <string name="view_pausado">Tempo pausado(paused):</string>
+    <string name="view_criacao">Tempo de criação:</string>
+</resources>
