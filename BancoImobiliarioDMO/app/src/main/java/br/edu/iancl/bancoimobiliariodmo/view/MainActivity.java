@@ -205,3 +205,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 }
+
+/*
+Implementação bacana, porém existem algumas considerações:
+
+1. Não é possível definir quais os cartões que estão enviando ou recebendo os valores.
+
+2. Não é possível saber o saldo de um cartão.
+
+3. Todas as operações são realizadas pelo cartão 1.
+
+Nota: 5,0
+ */
