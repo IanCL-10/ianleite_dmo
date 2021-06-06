@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ListaDeContatos_DMO</string>
+    <string name="adicionar_contato">Adicionar novo contato</string>
+    <string name="lista_vazia">Lista vazia</string>
+    <string name="button_salvar">Salvar</string>
+    <string name="hint_nome_contato">Nome</string>
+    <string name="hint_apelido_contato">Apelido</string>
+    <string name="hint_telefone_contato">Telefone</string>
+    <string name="hint_email_contato">Email</string>
+    <string name="success_message">Dados salvos</string>
+    <string name="favorito_checkbox">Favorito</string>
+</resources>
