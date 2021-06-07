@@ -150,3 +150,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 }
+
+/*
+Muito bom! Parabéns.
+
+Fique atento a construção do layout, por exemplo, o activity de média ponderada sobrepõe elementos
+em telas menores.
+
+Nota 10.
+ */
