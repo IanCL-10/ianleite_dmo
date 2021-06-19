@@ -124,3 +124,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this,String.format("O tempo de execução é de %ds", segundosExecutando), Toast.LENGTH_SHORT).show();
     }
 }
+/*
+Perfeito!
+Nota 10
+ */
