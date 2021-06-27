@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MinhasTarefas_DMO</string>
+    <string name="adicionar_tarefa">Adicionar Tarefa</string>
+    <string name="exibir_concluidas">Exibir tarefas concluídas</string>
+    <string name="btn_salvar_tarefa">Salvar Tarefa</string>
+    <string name="hint_data_limite">Data limite...</string>
+    <string name="hint_descricao_tarefa">Descrição da tarefa...</string>
+    <string name="hint_titulo_tarefa">Título da tarefa...</string>
+    <string name="success_message">Dados Salvos</string>
+</resources>
