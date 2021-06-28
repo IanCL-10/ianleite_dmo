@@ -22,21 +22,13 @@ public class LivroDao {
         mHelper = new SQLiteHelper(context);
     }
 
-    /*
-        Para salvar os dados na base basta indicar em um ContentValues ou seja, em um objeto que
-        armazena chave e valor e solicitar que os dados sejam salvos no banco de dados.
-        Atenção pois o nome das colunas deve ser sempre o mesmo.
-    */
     public boolean insert(Livro livro){
         ContentValues values = new ContentValues();
         values.put(SQLiteHelper.ATTR_TITLE, livro.getTitulo());
         values.put(SQLiteHelper.ATTR_AUTHOR, livro.getAutor());
 
         mDatabase = mHelper.getWritableDatabase();
-        /*
-            O metodo insert do Database retorna o numero de linhas inseridas ou -1 caso
-            ocorra algum erro.
-         */
+
         long linhas = mDatabase.insert(
                 SQLiteHelper.TABLE_NAME_BOOK,
                 null,
