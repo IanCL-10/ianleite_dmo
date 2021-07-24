@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">MeuTreino</string>
+    <string name="exc_nome">Nome do exercício</string>
+    <string name="exc_instrucoes">Instruções</string>
+    <string name="exc_imagem_src">Nome do arquivo no drawable</string>
+    <string name="exc_salvar">Salvar</string>
+    <string name="message_success">Salvo com sucesso</string>
+    <string name="message_erros">Erro ao salvar os dados</string>
 </resources>
