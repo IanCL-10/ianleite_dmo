@@ -123,3 +123,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
+/*
+O aplicativo ficou bem bacana, está operando tranquilamente.
+
+Contudo faltaram alguns requisitos como: tarefa Ligar, armazenamento em sharedPreferences.
+
+Nota: 5,0
+ */
